@@ -5,12 +5,25 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <limits>
 using namespace std;
 
 double int_mean(double minn, double maxx)
 {
 double f = (double)rand() / RAND_MAX;
 return minn + f * (maxx-minn);
+}
+
+double min_max(double ar[][],int size)
+{
+double min_v = numeric_limits<double>::max();
+double max_v = numeric_limits<double>::min();
+for (int i=0;i<size;i++)
+{
+min_v = min(ar[0][i],min_v);
+max_v = max(ar[0][i],max_v)
+}
+cout<<min_v<<"  "<<max_v;
 }
 
 int main(int argc, char *argv[])
@@ -40,7 +53,7 @@ int main(int argc, char *argv[])
 	else
 	cout<<"Unable to open file";
 
-	
+	min_max(a,num_data_points);	
 
 
 	return 0;
