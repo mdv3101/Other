@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <cstdlib>
 #include <string>
 #include <limits>
 #include <math.h>
@@ -49,8 +50,7 @@ int main(int argc, char *argv[])
 	string line;
 	double a[50][50];
 	int num_data_points,dim;
-	char *clus = argv[2];
-	int clus_size = 2;
+	int clus_size = atoi(argv[2]);
 	double b[50][50];
 	fstream myfile (argv[1]);
 	if (myfile.is_open())
@@ -84,6 +84,9 @@ int main(int argc, char *argv[])
 	int index;
 	double c[50];
 	double d[50];
+
+	for (int itt = 0; itt<5;itt++)
+{
 	for (int i=0;i<num_data_points;i++)
 	{
 	for (int j=0;j<clus_size;j++)
@@ -99,10 +102,42 @@ int main(int argc, char *argv[])
 		}
 	}
 	d[i]=index;
+	//cout<<d[i]<<" ";
 	}
+	//cout<<"\n";
+	double e[50] = {0};
+	int count = 0; 
+	for (int i=0;i<clus_size;i++)
+	{
+		for (int j=0;j<num_data_points;j++)
+		{	
+			if (d[j]==i)
+			{
+			count++;
+			for (int k=0;k<dim;k++)
+			e[k] += a[j][k];	
+			}
+		}
+		for (int l=0;l<dim;l++)
+		{
+			b[i][l]= e[l]/count;	
+		}
 
-	for (int i = 0; i<num_data_points;i++)
-	cout<<d[i]<<" ";
-
-	return 0;
+	}
 }
+ofstream myfile1("cluster.txt");
+	if (myfile1.is_open())
+	{
+		for (int i=0;i<clus_size;i++)
+		{
+			for (int j=0;j<dim;j++)
+				myfile1 << b[i][j]<<" ";
+			myfile1 <<"\n";
+		}
+
+	}
+	myfile1.close();
+print_arr(b,clus_size,dim);
+return 0;
+}
+
