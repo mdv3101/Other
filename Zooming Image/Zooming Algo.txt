@@ -2,17 +2,22 @@ Method 1: Pixel replication:
 INTRODUCTION:
 It is also known as Nearest neighbor interpolation. As its name suggest , in this method , we just replicate the neighboring pixels. As we have already discussed in the tutorial of Sampling , that zooming is nothing but increase amount of sample or pixels. This algorithm works on the same principle.
 
+
 WORKING:
 In this method we create new pixels form the already given pixels. Each pixel is replicated in this method n times row wise and column wise and you got a zoomed image. Its as simple as that.
+
 
 FOR EXAMPLE:
 if you have an image of 2 rows and 2 columns and you want to zoom it twice or 2 times using pixel replication, here how it can be done.
 
 For a better understanding , the image has been taken in the form of matrix with the pixel values of the image.
 
+
 1	2
 3	4
+
 The above image has two rows and two columns, we will first zoom it row wise.
+
 
 ROW WISE ZOOMING:
 When we zoom it row wise , we will just simple copy the rows pixels to its adjacent new cell.
@@ -21,6 +26,7 @@ Here how it would be done.
 
 1	1	2	2
 3	3	4	4
+
 As you can that in the above matrix , each pixel is replicated twice in the rows.
 
 COLUMN SIZE ZOOMING:
