@@ -1,6 +1,7 @@
 *Take any image as input and give a zoomed image as output.
 
 *Use pivot point (where to zoom) and scale as parameters.
+
 *Width and height needs to be same of input and output image.
 
 Notes
