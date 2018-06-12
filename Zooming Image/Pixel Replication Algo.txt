@@ -47,3 +47,5 @@ ADVANTAGE AND DISADVANTAGE:
 One of the advantage of this zooming technique is , it is very simple. You just have to copy the pixels and nothing else.
 
 The disadvantage of this technique is that image got zoomed but the output is very blurry. And as the zooming factor increased , the image got more and more blurred. That would eventually result in fully blurred image.
+
+Source: http://www.tutorialspoint.com/dip/Zooming_Methods.htm
