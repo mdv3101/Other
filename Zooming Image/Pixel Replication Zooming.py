@@ -14,10 +14,6 @@ scale = args["scale"]
 image = cv2.imread(image_path)
 image = image.tolist()
 
-"""
-WRITE YOUR CODE HERE
-
-"""
 img = np.asarray(image)
 l,b,h =img.shape
 
